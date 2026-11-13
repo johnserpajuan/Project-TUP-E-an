@@ -506,53 +506,88 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .navbar { padding: 1rem; }
+    /* Navbar */
+    .navbar { 
+        padding: 1rem; 
+        justify-content: center; /* Centers the logo on mobile */
+    }
     .nav-links { display: none; }
-    .hero-section h1 { font-size: 2.5rem; }
+    
+    /* Hero Section */
+    .hero-section {
+        padding: 4rem 1.5rem 5rem 1.5rem;
+        clip-path: ellipse(180% 100% at 50% 0%); /* Flattens the curve slightly for mobile */
+    }
+    .hero-section h1 { 
+        font-size: 2.2rem; 
+        line-height: 1.1;
+    }
+    .hero-section p { 
+        font-size: 1rem; 
+    }
+    .hero-buttons { 
+        flex-direction: column; /* Stacks the buttons neatly */
+        gap: 0.8rem; 
+        padding: 0 1rem;
+    }
+
+    /* General Container & Sections */
+    .container {
+        margin-top: -2rem; 
+        padding: 0 1rem;
+    }
+    .section-block {
+        padding: 2rem 1.5rem; /* Reduces the massive desktop padding */
+        margin-bottom: 2rem;
+        border-radius: 12px;
+    }
+    .section-header-centered h2 { 
+        font-size: 1.8rem; 
+    }
+    .section-header-centered p { 
+        font-size: 0.95rem; 
+    }
+
+    /* Team Section */
     .team-grid {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
     }
-}
+    .team-card {
+        padding: 1.5rem;
+    }
+    .team-photo {
+        width: 120px; /* Scaled down for mobile */
+        height: 120px;
+        margin-bottom: 1rem;
+    }
 
-/* Phase 1 New Styles */
-.team-role {
-    font-size: 0.9rem;
-    color: var(--leaf);
-    font-weight: 700;
-    margin-top: 0.3rem;
-}
+    /* Bins Section */
+    .bins-showcase {
+        gap: 1.5rem;
+    }
+    .bin-card {
+        padding: 1.8rem 1.5rem;
+    }
+    .bin-image {
+        height: 200px; /* Scaled down so it doesn't take up the whole screen */
+        margin-bottom: 1rem;
+    }
+    .bin-card h3 { 
+        font-size: 1.3rem; 
+    }
 
-.prototype-badge {
-    display: inline-block;
-    background-color: #FFF3CD;
-    color: #856404;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-top: 1rem;
-    border: 1px solid #FFEEBA;
-}
-
-.last-updated {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #777;
-    margin-top: 2rem;
-    font-style: italic;
-}
-
-.partner-link {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: var(--moss);
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.partner-link:hover {
-    color: var(--leaf);
-    text-decoration: underline;
+    /* Grids (Facts, Stats, Locations) */
+    .info-grid, .stats-grid, .locations-grid {
+        gap: 1.2rem;
+    }
+    .info-card, .stat-card, .location-card, .quiz-container {
+        padding: 1.5rem;
+    }
+    .stat-card h3 { 
+        font-size: 2rem; 
+    }
+    .info-icon {
+        font-size: 2.5rem;
+    }
 }
