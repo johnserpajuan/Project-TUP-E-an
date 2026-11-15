@@ -210,3 +210,60 @@ body { overflow-x: hidden; }
   .bin-description h3 { font-size:16px; }
   .footer-bottom { flex-direction:column; }
 }
+
+
+/* Drop-off section: campus grounds photographic backdrop */
+.location-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #edf1e9;
+}
+.location-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(244,247,239,.86), rgba(244,247,239,.72) 48%, rgba(244,247,239,.88)),
+    url("grounds.webp") center 48% / cover no-repeat;
+  transform: scale(1.015);
+}
+.location-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 12% 20%, rgba(197,239,105,.13), transparent 32%),
+              linear-gradient(180deg, rgba(255,255,255,.10), rgba(20,49,35,.05));
+}
+.location-section > * { position: relative; }
+.location-main { background: rgba(31,73,55,.94); }
+.location-partner { background: rgba(237,240,232,.92); backdrop-filter: blur(8px); }
+
+@media (max-width: 700px) {
+  .location-section::before {
+    background:
+      linear-gradient(145deg, rgba(244,247,239,.90), rgba(244,247,239,.80)),
+      url("grounds.webp") center / cover no-repeat;
+  }
+}
+
+
+/* Embedded location maps for both proposed drop-off points */
+.location-main, .location-partner { min-height: 560px; }
+.location-map-wrap { width: 100%; margin-top: 28px; }
+.location-map-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px; font:500 9px var(--mono); letter-spacing:.1em; }
+.location-map-heading > span { opacity:.72; }
+.location-map-heading a { font:600 10px var(--body); letter-spacing:0; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:4px; }
+.location-map-heading a span { margin-left:5px; color:var(--lime); }
+.location-map { display:block; width:100%; height:220px; border:0; border-radius:3px; background:#e7ebe3; }
+.location-partner .location-map-heading a span { color:var(--red); }
+@media (max-width:700px) {
+  .location-main, .location-partner { min-height:0; }
+  .location-map-wrap { margin-top:24px; }
+  .location-map { height:210px; }
+  .location-map-heading { align-items:flex-start; flex-wrap:wrap; }
+}
